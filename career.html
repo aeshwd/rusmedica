@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Opportunities - RUSMEDICA</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="images/rusmedica.png" type="image/x-icon">
+</head>
+<body>
+  <nav>
+    <div class="navbar">
+      <a href="index.html">
+        <img src="images/rusmedica.png" alt="logo" width="100px">
+      </a>
+      
+    </div>
+  </nav>
+
+  <section id="career-details">
+    <h2>Career Opportunities in <span id="country-name"></span></h2>
+    <img id="country-img" src="" alt="Country Image">
+    <p id="country-description"></p>
+  </section>
+
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/+916280144157" class="whatsapp-btn" target="_blank"><img src="images/whatsapp-removebg-preview.png" width="80px" style="border-radius: 50%; padding: 10px"></a>
+
+  <footer>
+    <p>&copy; 2025 MBBS in Russia for Indian Students. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+   const careerData = {
+    "Russia": {
+      img: "images/country1.jpg",
+      description: "You can practice in Russia immediately after completing your MBBS. To get a license, you must register with Roszdravnadzor (Federal Service for Surveillance in Healthcare). No additional exams are required."
+    },
+    "Post-Soviet Countries": {
+      img: "images/country2.png",
+      description: "These CIS countries recognize Russian MBBS degrees. You can work as a doctor with minimal or no additional exams. Registration with the national medical council may be required."
+    },
+    "China": {
+      img: "images/country3.jpg",
+      description: "Some provinces in China recognize Russian MBBS degrees. You may need to pass a language proficiency test if working in a Chinese-speaking area. Registration with the National Medical Council of China is required."
+    },
+    "Gulf Countries": {
+      img: "images/country4.jpg",
+      description: "Russia is listed under recognized medical universities in many Gulf countries. You must pass the Prometric Exam for licensing. Some countries may require 1-2 years of clinical experience before full registration."
+    },
+    "Middle Eastern Countries": {
+      img: "images/country5.jpg",
+      description: "Russia has strong medical ties with many Arab countries. You may need to register with the local medical board. Language proficiency in Arabic may be required for government hospitals."
+    },
+    "India": {
+      img: "images/country6.jpg",
+      description: "In India, you must appear for the NEXT Exam (from 2024 onwards) to practice after completing MBBS from Russia."
+    },
+    "USA": {
+      img: "images/country7.jpg",
+      description: "You must pass the USMLE (United States Medical Licensing Exam) to practice in the USA after completing MBBS from Russia."
+    },
+    "Canada": {
+      img: "images/canada.jpg",
+      description: "You must pass the MCCQE (Medical Council of Canada Qualifying Exam) to practice in Canada after completing MBBS from Russia."
+    },
+    "UK": {
+      img: "images/country8.jpg",
+      description: "You must pass the PLAB (Professional and Linguistic Assessments Board) exam to practice in the UK after completing MBBS from Russia."
+    },
+    "Australia": {
+      img: "images/country9.jpg",
+      description: "You must pass the AMC (Australian Medical Council Exam) to practice in Australia after completing MBBS from Russia."
+    },
+    "New Zealand": {
+      img: "images/country10.jpg",
+      description: "You must pass the NZREX (New Zealand Registration Exam) to practice in New Zealand after completing MBBS from Russia."
+    },
+    "Germany": {
+      img: "images/country11.jpg",
+      description: "You must pass the Medical License (Approbation) exam and a German language test to practice in Germany after completing MBBS from Russia."
+    }
+  };
+    const country = new URLSearchParams(window.location.search).get('country');
+    const data = careerData[country];
+
+    if (data) {
+      document.getElementById('country-name').textContent = country;
+      document.getElementById('country-img').src = data.img;
+      document.getElementById('country-description').textContent = data.description;
+    }
+  </script>
+</body>
+</html>

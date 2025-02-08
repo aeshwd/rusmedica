@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MBBS Books - RUSMEDICA</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="images/rusmedica.png" type="image/x-icon">
+</head>
+<body>
+  <nav>
+    <div class="navbar">
+        <a href="index.html">
+          <img src="images/rusmedica.png" alt="logo" width="100px">
+        </a>
+        
+      </div>
+  </nav>
+
+  <section id="books-section">
+    <h2>MBBS Books for <span id="year-title"></span></h2>
+    <img id="year-img" src="" alt="Books Image">
+    <div id="books-list"></div>
+  </section>
+
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/+916280144157" class="whatsapp-btn" target="_blank"><img src="images/whatsapp-removebg-preview.png" width="80px" style="border-radius: 50%; padding: 10px"></a>
+
+  <footer>
+    <p>&copy; 2025 MBBS in Russia for Indian Students. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+   const booksData = {
+  "First Year": {
+    img: "images/ist.jpg",
+    books: [
+      { 
+        title: "BD Chaurasia's Human Anatomy 4 Volume Set ( VOLUME 1,2,3,4)", 
+        img: "images/anatomy.jpg",
+        amazonLink: "https://www.amazon.in/Chaurasias-Anatomy-Volumes-Workbooks-books/dp/9354668747", 
+        flipkartLink: "https://www.flipkart.com/bd-chaurasia-s-human-anatomy-4-volume-set-1-2-3-4/p/itm3c4609de36ef2"
+      },
+      { 
+        title: "Atlas of Human Anatomy, International Edition", 
+        img: "images/atlas.jpg", 
+        amazonLink: "https://www.amazon.in/Atlas-Human-Anatomy-International-7th/dp/B0CY89ZZ42", 
+        flipkartLink: "https://www.flipkart.com/netter-atlas-human-anatomy-classic-regional-approach-international/p/itme42ace53565ac"
+      },
+    ]
+  },
+  "Second Year": {
+    img: "images/second.jpg",
+    books: [
+      { 
+        title: "Biochemistry for MBBS", 
+        img: "images/biochemistry.jpg", 
+        amazonLink: "https://www.amazon.in/Biochemistry-U-Satyanarayana-ebook/dp/B00JMQ6QVU", 
+        flipkartLink: "https://www.flipkart.com/biochemistry-six-edition-u-satyanarayana-chakrapani/p/itmdcfd36b2c00ab"
+      },
+    ]
+  },
+  "Third Year": {
+    img: "images/3rd.jpg",
+    books: [
+      { 
+        title: "Bailey & Love's Short Practice Of Surgery, 27Th Edition", 
+        img: "images/surgery.jpg", 
+        amazonLink: "https://www.amazon.in/Bailey-Loves-Short-Practice-Surgery/dp/113803164X", 
+        flipkartLink: "https://www.flipkart.com/bailey-love-s-short-practice-surgery/p/itm6e43c6d93480e"
+      },
+    ]
+  }
+};
+
+     
+
+      
+
+
+    
+
+    const year = new URLSearchParams(window.location.search).get('year');
+    const data = booksData[year];
+
+    if (data) {
+      document.getElementById('year-title').textContent = year;
+      document.getElementById('year-img').src = data.img;
+
+      let booksHtml = '';
+data.books.forEach(book => {
+  booksHtml += `
+    <div class="book-item">
+      <img src="${book.img}" alt="${book.title}" class="book-image">
+      <p>${book.title}</p>
+      <a href="${book.amazonLink}" target="_blank">Buy on Amazon</a>
+      <a href="${book.flipkartLink}" target="_blank">Buy on Flipkart</a>
+    </div>
+  `;
+});
+document.getElementById('books-list').innerHTML = booksHtml;
+
+    }
+  </script>
+</body>
+</html>
